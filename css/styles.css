@@ -47,6 +47,7 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
   padding: 25px;
   text-align: center;
   text-transform: uppercase;
+  width:100%;
 }
 /* ====================== Navigation ====================== */
 nav {
@@ -71,7 +72,8 @@ nav h1 a {
     background-color: #eee;
     font-size: 17px;
     margin: 0;
-    width: calc(50% - 80px);
+    width: 100%;
+
 }
 
 /* Display list items side by side */
@@ -183,11 +185,14 @@ nav h1 a {
   color: #fff;
   display: inline-block;
   font-size: 10pt;
-  margin: 15px 0 0;
+/*  margin: 15px 0 0;*/
   padding: 8px 30px 10px;
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
+  margin-left:auto;
+  margin-right:auto;
+
 }
 
 /* ====================== Restaurant Details ====================== */
@@ -214,7 +219,7 @@ nav h1 a {
 .inside #footer {
   bottom: 0;
   position: absolute;
-  width: 50%;
+  width: 100%;
 }
 #restaurant-name {
   color: #f18200;
@@ -222,16 +227,29 @@ nav h1 a {
   font-size: 20pt;
   font-weight: 200;
   letter-spacing: 0;
-  margin: 15px 0 30px;
+  text-align:center;
   text-transform: uppercase;
   line-height: 1.1;
+  margin-left: auto;
+  margin-right: auto;
+  width:85%;
 }
 #restaurant-img {
 	width: 90%;
+  margin-left:auto;
+  margin-right:auto;
+  display:block;
 }
 #restaurant-address {
   font-size: 12pt;
-  margin: 10px 0px;
+  margin-left:auto;
+  margin-right: auto;
+  width:90%;
+}
+#restaurant-hours {
+  margin-left:auto;
+  margin-right:auto;
+  width:90%;
 }
 #restaurant-cuisine {
   background-color: #333;
@@ -244,12 +262,16 @@ nav h1 a {
   text-align: center;
   text-transform: uppercase;
 	width: 90%;
+  margin-left:auto;
+  margin-right:auto;
 }
 #restaurant-container, #reviews-container {
   border-bottom: 1px solid #d9d9d9;
   border-top: 1px solid #fff;
   padding: 140px 40px 30px;
-  width: 50%;
+  width: 100%%;
+  margin-left:auto;
+  margin-right:auto;
 }
 #reviews-container {
   padding: 30px 40px 80px;
@@ -260,9 +282,11 @@ nav h1 a {
   font-weight: 300;
   letter-spacing: -1px;
   padding-bottom: 1pt;
+  text-align:center;
 }
 #reviews-list {
-  margin: 0;
+  margin-left: auto;
+  margin-right: auto;
   padding: 0;
 }
 #reviews-list li {
@@ -270,11 +294,14 @@ nav h1 a {
     border: 2px solid #f3f3f3;
   display: block;
   list-style-type: none;
-  margin: 0 0 30px;
+
   overflow: hidden;
   padding: 0 20px 20px;
   position: relative;
   width: 85%;
+  margin-left:auto;
+  margin-right:auto;
+
 }
 #reviews-list li p {
   margin: 0 0 10px;
