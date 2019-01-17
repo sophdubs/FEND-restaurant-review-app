@@ -1,3 +1,5 @@
+
+//these are all the files and images that we need to cache in order to render a functioning page offline
 const filesToCache = [
     '/css/styles.css',
     '/data/restaurants.json',
@@ -18,6 +20,8 @@ const filesToCache = [
     '/restaurant.html'
 ];
 
+//This event listener will be called once the SW is registered and will open the cache if
+//one is not already opened and save all of the files in "filesToCache" into the cache.
 self.addEventListener('install', function(event){
     event.waitUntil(
         caches.open('v1').then(function(cache){
@@ -26,14 +30,14 @@ self.addEventListener('install', function(event){
     );
 });
 
+//This event listener is waiting for fetch requests. If the event we are trying to fetch is already in the cache,
+//we will return the cached response. Otherwise, we will fetch the response from the browser and save it in the cache.
 self.addEventListener('fetch', function(event){
     event.respondWith(
         caches.match(event.request).then(function(response){
             if(response){
-                console.log('Found', event.request, ' in cache');
                 return response;
             } else {
-                console.log('Could not find', event.request, ' in cache');
                 return fetch(event.request)
                 .then(function(response) {
                     const clonedResponse = response.clone();
@@ -44,7 +48,6 @@ self.addEventListener('fetch', function(event){
                 })
                 .catch(function(error){
                     console.log(error);
-
                 })
             }
         })
